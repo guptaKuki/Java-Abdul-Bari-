@@ -3,7 +3,7 @@ package Multithreading;
  /*synchronize method prints the data separately from both
 thread in other words it prevents the data to be overlapped.*/
 
-class MyData{
+class MyDataUse{
 	/*The other method for synchronization is to write the synchronize at the signature method of the 
 	display class so the whole method is being synchronized.*/
 	
@@ -19,8 +19,8 @@ class MyData{
 }
 
 class Thread1 extends Thread{
-	MyData d;
-	Thread1(MyData data){
+	MyDataUse d;
+	Thread1(MyDataUse data){
 		d=data;
 	}
 	public void run() {
@@ -29,8 +29,8 @@ class Thread1 extends Thread{
 }
 
 class Thread2 extends Thread{
-	MyData d;
-	Thread2(MyData data2){
+	MyDataUse d;
+	Thread2(MyDataUse data2){
 		d=data2;
 	}
 	public void run() {
@@ -40,7 +40,7 @@ class Thread2 extends Thread{
 public class MultiThreadingUsingMonitor {
 
 	public static void main(String[] args) {
-		MyData D=new MyData();
+		MyDataUse D=new MyDataUse();
 		Thread1 t1 =new Thread1(D);
 		Thread2 t2 =new Thread2(D);
 		t1.start();
