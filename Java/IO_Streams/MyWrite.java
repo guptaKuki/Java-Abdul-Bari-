@@ -6,6 +6,7 @@ class Student{        // Student Class
 	int rollNo;
 	String name;
 	String branch;
+	float avg;
 }
 
 public class MyWrite {
